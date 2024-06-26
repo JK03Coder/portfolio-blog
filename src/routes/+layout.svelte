@@ -21,7 +21,7 @@
 	{/if}
 </svelte:head>
 
-<div class="mx-auto flex min-h-screen max-w-[85rem] flex-col">
+<div class="mx-auto flex min-h-screen max-w-[60rem] flex-col">
 	<div class="px-1 py-1 sm:px-4">
 		<div
 			class="flex items-center justify-between rounded-lg border bg-secondary p-1 text-secondary-foreground shadow-sm"

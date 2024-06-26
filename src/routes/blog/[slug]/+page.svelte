@@ -4,7 +4,7 @@
 	export let data: PageData;
 </script>
 
-<div class="prose p-10">
+<div class="prose">
 	{#await data.post}
 		<h1>Loading post...</h1>
 	{:then post}
