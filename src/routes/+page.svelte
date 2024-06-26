@@ -4,6 +4,6 @@
 	export let data: PageData;
 </script>
 
-<article class="prose">
+<article class="prose mx-auto max-w-prose">
 	{@html data.global.about}
 </article>

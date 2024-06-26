@@ -2,20 +2,9 @@
 	import type { PageData } from './$types';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import * as Card from '$lib/components/ui/card';
+	import { formatDate } from '$lib/utils';
 
 	export let data: PageData;
-
-	// e.g. 2022-01-31 -> January 31st, 2022
-	function formatDate(dateStr: string) {
-		const date = new Date(dateStr),
-			day = date.getDate(),
-			suffix = ['th', 'st', 'nd', 'rd'][
-				day % 10 > 3 || [11, 12, 13].includes(day % 100) ? 0 : day % 10
-			];
-		return date
-			.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-			.replace(String(day), day + suffix);
-	}
 </script>
 
 {#await data.posts}
@@ -24,12 +13,12 @@
 			<Card.Header>
 				<Card.Title tag="h2">
 					<Skeleton
-						class="h-[40px] rounded-full"
+						class="h-[30px] rounded-full"
 						style="max-width: {Math.min(8, (index*4+6)%10+2)}00px"
 					/>
 				</Card.Title>
 				<Card.Description>
-					<Skeleton class="h-[20px] w-[270px] rounded-full" />
+					<Skeleton class="h-[16px] w-[270px] rounded-full" />
 				</Card.Description>
 			</Card.Header>
 		</Card.Root>
