@@ -6,6 +6,4 @@
 
 <article class="prose">
 	{@html data.global.about}
-	<br />
-	<a href="blog">blog</a>
 </article>

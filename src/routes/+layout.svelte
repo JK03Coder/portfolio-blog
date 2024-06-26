@@ -22,13 +22,13 @@
 </svelte:head>
 
 <div class="mx-auto flex min-h-screen max-w-[85rem] flex-col">
-	<div class="px-4 py-1">
+	<div class="px-1 py-1 sm:px-4">
 		<div
 			class="flex items-center justify-between rounded-lg border bg-secondary p-1 text-secondary-foreground shadow-sm"
 		>
 			<div class="flex gap-2">
-				<Button variant="ghost" class="font-bold tracking-wide">Home</Button>
-				<Button variant="ghost" class="font-bold tracking-wide">Blog</Button>
+				<Button variant="ghost" href="/" class="font-bold tracking-wide">Home</Button>
+				<Button variant="ghost" href="/blog" class="font-bold tracking-wide">Blog</Button>
 			</div>
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger asChild let:builder>
