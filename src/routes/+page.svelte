@@ -1,15 +1,14 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import { Head } from 'svead';
+	import { MetaTags } from 'svelte-meta-tags';
 
-	export let data: PageData;
+	const { data } = $props();
 </script>
 
-<Head
+<MetaTags
 	title="Justin Kempton"
 	description="I'm a software developer based in NZ. I build web apps with Svelte and SvelteKit."
-	url={$page.url.toString()}
+	canonical={$page.url.toString()}
 />
 
 <article class="prose mx-auto max-w-prose">

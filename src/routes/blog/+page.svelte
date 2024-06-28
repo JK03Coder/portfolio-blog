@@ -1,18 +1,17 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import * as Card from '$lib/components/ui/card';
 	import { formatDate } from '$lib/utils';
 	import { page } from '$app/stores';
-	import { Head } from 'svead';
+	import { MetaTags } from 'svelte-meta-tags';
 
-	export let data: PageData;
+	const { data } = $props();
 </script>
 
-<Head
+<MetaTags
 	title="Justin Kempton | Blog"
 	description="All my blogs are sorted by published date with the newest first."
-	url={$page.url.toString()}
+	canonical={$page.url.toString()}
 />
 
 {#await data.posts}

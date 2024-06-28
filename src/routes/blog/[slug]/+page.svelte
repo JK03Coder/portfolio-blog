@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import { formatDate } from '$lib/utils';
 	import LoaderCircle from 'lucide-svelte/icons/loader-circle';
 	import { page } from '$app/stores';
-	import { Head } from 'svead';
+	import { MetaTags } from 'svelte-meta-tags';
 
-	export let data: PageData;
+	const { data } = $props();
 </script>
 
 {#await data.post}
@@ -13,11 +12,11 @@
 		<LoaderCircle class="h-16 w-16 animate-spin" />
 	</div>
 {:then post}
-	<Head
-		title="Justin Kempton | {post.title}"
+	<MetaTags
+		title={post.title}
+		titleTemplate="Justin Kempton | %s"
 		description={post.description}
-		url={$page.url.toString()}
-		authorName="Justin Kempton"
+		canonical={$page.url.toString()}
 	/>
 
 	<div class="prose mx-auto max-w-prose text-lg">
