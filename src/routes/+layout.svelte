@@ -24,15 +24,19 @@
 <div class="mx-auto flex min-h-screen max-w-[60rem] flex-col">
 	<div class="px-1 py-1 sm:px-4">
 		<div
-			class="flex items-center justify-between rounded-lg border bg-secondary p-1 text-secondary-foreground shadow-sm"
+			class="flex items-center justify-between rounded-lg border bg-accent p-1 text-accent-foreground shadow-sm"
 		>
 			<div class="flex gap-2">
-				<Button variant="ghost" href="/" class="font-bold tracking-wide">Home</Button>
-				<Button variant="ghost" href="/blog" class="font-bold tracking-wide">Blog</Button>
+				<Button variant="ghost" href="/" class="font-bold tracking-wide hover:bg-secondary"
+					>Home</Button
+				>
+				<Button variant="ghost" href="/blog" class="font-bold tracking-wide hover:bg-secondary"
+					>Blog</Button
+				>
 			</div>
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger asChild let:builder>
-					<Button builders={[builder]} variant="ghost" size="icon">
+					<Button builders={[builder]} variant="ghost" size="icon" class="hover:bg-secondary">
 						<Sun
 							class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-transform duration-300 dark:-rotate-90 dark:scale-0"
 						/>
