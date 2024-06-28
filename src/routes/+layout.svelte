@@ -50,7 +50,7 @@
 			</DropdownMenu.Root>
 		</div>
 	</div>
-	<div class="mt-2 px-4 sm:px-6 md:mt-4 lg:px-8">
+	<div class="my-2 px-4 sm:px-6 md:mt-4 lg:px-8">
 		<slot></slot>
 	</div>
 </div>
