@@ -16,7 +16,7 @@ export const load = (async ({ fetch }) => {
 		// Stream this promise to the front end so it can await over there.
 		posts: directus.request<post[]>(
 			readItems('posts', {
-				fields: ['slug', 'title', 'publish_date'],
+				fields: ['slug', 'title', 'publish_date', 'description'],
 				sort: ['-publish_date']
 			})
 		)

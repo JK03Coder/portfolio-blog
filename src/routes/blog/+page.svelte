@@ -3,24 +3,38 @@
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import * as Card from '$lib/components/ui/card';
 	import { formatDate } from '$lib/utils';
+	import { page } from '$app/stores';
+	import { Head } from 'svead';
 
 	export let data: PageData;
 </script>
 
+<Head
+	title="Justin Kempton | Blog"
+	description="All my blogs are sorted by published date with the newest first."
+	url={$page.url.toString()}
+/>
+
 {#await data.posts}
-	{#each Array(data.total_posts) as _, index}
+	{#each Array(Number(data.total_posts)) as _}
 		<Card.Root class="mb-4">
 			<Card.Header>
 				<Card.Title tag="h2">
 					<Skeleton
 						class="h-[30px] rounded-full"
-						style="max-width: {Math.min(8, (index*4+6)%10+2)}00px"
+						style="max-width: {Math.floor(Math.random() * 7) + 2}00px"
 					/>
 				</Card.Title>
 				<Card.Description>
 					<Skeleton class="h-[16px] w-[270px] rounded-full" />
 				</Card.Description>
 			</Card.Header>
+			<Card.Content>
+				<Skeleton
+					class="h-[16px] rounded-full"
+					style="max-width: {Math.floor(Math.random() * 7) + 2}00px"
+				/>
+			</Card.Content>
 		</Card.Root>
 	{/each}
 {:then posts}
@@ -33,6 +47,9 @@
 						>{formatDate(post.publish_date)} &bull; Justin Kempton</Card.Description
 					>
 				</Card.Header>
+				<Card.Content>
+					{post.description}
+				</Card.Content>
 			</Card.Root>
 		</a>
 	{/each}

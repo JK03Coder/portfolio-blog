@@ -2,6 +2,8 @@
 	import type { PageData } from './$types';
 	import { formatDate } from '$lib/utils';
 	import LoaderCircle from 'lucide-svelte/icons/loader-circle';
+	import { page } from '$app/stores';
+	import { Head } from 'svead';
 
 	export let data: PageData;
 </script>
@@ -11,6 +13,13 @@
 		<LoaderCircle class="h-16 w-16 animate-spin" />
 	</div>
 {:then post}
+	<Head
+		title="Justin Kempton | {post.title}"
+		description={post.description}
+		url={$page.url.toString()}
+		authorName="Justin Kempton"
+	/>
+
 	<div class="prose mx-auto max-w-prose text-lg">
 		<h1 aria-label="Post Title">{post.title}</h1>
 		<div aria-label="Date of Publication" class="text-md mb-6 mt-2 text-muted-foreground">
