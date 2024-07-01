@@ -24,9 +24,9 @@
 						style="max-width: {Math.floor(Math.random() * 7) + 2}00px"
 					/>
 				</Card.Title>
-				<Card.Description>
-					<Skeleton class="h-[16px] w-[270px] rounded-full" />
-				</Card.Description>
+				<!-- set the Skeleton classes to Description otherwise it breaks page if you put it inside as a Component -->
+				<Card.Description class="h-[16px] w-[270px] animate-pulse rounded-full bg-muted"
+				></Card.Description>
 			</Card.Header>
 			<Card.Content>
 				<Skeleton
