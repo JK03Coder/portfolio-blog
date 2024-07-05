@@ -25,7 +25,7 @@
 			{formatDate(post.publish_date)} &bull; Justin Kempton
 		</div>
 		{@html post.content}
-		<footer class="text-center">
+		<footer class="text-center mt-60">
 			<small>&copy; 2024 Justin Kempton</small>
 		</footer>
 	</div>
